@@ -158,8 +158,11 @@ contract OreOreCoin is Owned{
         else{
             //캐시백 금액 계산
             uint256 cashback = 0;
-            cashback = _value / 100 * uint256(uint8(members[_to].getCashbackRate(msg.sender)));
-            members[_to].updateHistory(msg.sender, _value);
+            if(address(members[_to]) != address(0))
+            {
+                cashback = _value / 100 * uint256(uint8(members[_to].getCashbackRate(msg.sender)));
+                members[_to].updateHistory(msg.sender, _value);
+            }
 
             balanceOf[msg.sender] -= (_value - cashback);
             balanceOf[_to] += (_value - cashback);
