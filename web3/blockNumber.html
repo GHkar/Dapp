@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title> web3.js 시작하기 - cdn 연결</title>
+    <script src= "https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
+  </head>
+  
+  <body>
+    <script>
+        let web3 = new Web3(new Web3.providers.HttpProvider('http://210.125.31.240:8545'));
+
+        web3.eth.getBlockNumber((err, blockCount) => {
+          console.log(blockCount)
+        })
+    </script>
+  </body>
+</html>
