@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title> web3.js 시작하기 - 블록 정보</title>
+    <script src= "https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+
+        let web3 = new Web3(new Web3.providers.HttpProvider('http://210.125.31.240:8545'));
+
+        web3.eth.getBlock(1, (err, blockInfo) => {
+          console.log(blockInfo)
+        })
+
+        /* sync 형태로 처리
+        let blockInfo = web3.eth.getBlock(1)
+        blockInfo.then(bi => console.log(bi))
+        */
+    </script>
+  </body>
+</html>
