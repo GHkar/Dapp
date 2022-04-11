@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title> web3.js 시작하기 - cdn 연결</title>
+    <script src= "https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+        let web3 = new Web3(new Web3.providers.HttpProvider('http://210.125.31.240:8545'));
+
+        let ABI = [{"inputs":[{"internalType":"string","name":"g","type":"string"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"greeting","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"say","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"g","type":"string"}],"name":"setGreeting","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+
+        let CA = "0x1e074da46e807fe9e878076831eb106f0b3fb2a4"
+
+        let Contract = new web3.eth.Contract(ABI,CA)
+
+        Contract.methods.greeting().call().then(data => {
+          console.log('컨트랙트에서 greeting 변수 조회 : ' ,data)
+        });
+    </script>
+  </body>
+</html>
