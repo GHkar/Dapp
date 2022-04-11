@@ -8,7 +8,8 @@
     <script>
         let web3 = new Web3(new Web3.providers.HttpProvider('http://210.125.31.240:8545'));
         var filter = web3.eth.filter('latest');
-
+        // web3.eth.subscribe('newBlockHeaders', callback);
+        
         //노드에 블록 생성 시 콜백함수 실행
         filter.watch(function(error, result){
           var block = web3.eth.getBlock(result, true);
