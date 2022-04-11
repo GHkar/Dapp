@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title> web3.js 시작하기 - 블록 생성 이벤트</title>
+    <script src= "https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+        let web3 = new Web3(new Web3.providers.HttpProvider('http://210.125.31.240:8545'));
+        var filter = web3.eth.filter('latest');
+
+        //노드에 블록 생성 시 콜백함수 실행
+        filter.watch(function(error, result){
+          var block = web3.eth.getBlock(result, true);
+          console.log('current block #' + block.number);
+          console.log('current block info' + JSON.stringify(block));
+        });
+    </script>
+  </body>
+</html>
