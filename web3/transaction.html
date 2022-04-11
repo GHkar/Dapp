@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title> web3.js 시작하기 - 트랜잭션 생성</title>
+    <script src= "https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+        let web3 = new Web3(new Web3.providers.HttpProvider('http://210.125.31.240:8545'));
+
+        web3.eth.personal.newAccount('pass5', (err, createAddress) => {
+          console.log(createAddress)
+          web3.eth.personal.unlockAccount('0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f', 'pass0')
+
+          web3.eth.sendTransaction({from:'0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f', to:'0x5894d987cfc846830b693378d3676899ed7015d5', value:10000}, (err,txHash) =>{
+            console.log(txHash)
+          })
+          web3.eth.getTransaction('0x7df86b35e4df62696a9370963f5245e3e33b0fdbc0c8a187403277961d40a08b', (err,txInfo) => {
+            console.log(txInfo)
+          })
+        })
+    </script>
+  </body>
+</html>
