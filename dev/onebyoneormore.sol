@@ -1,14 +1,13 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13; // (1) version pragma
-// (2) Declare Contract
+pragma solidity ^0.8.13; 
+
 contract onebyone {
-        address public agent;       //개시자
-        string public contents;     //모임내용
-        uint256 public deadline;    //기한
-        uint256 public goalNum;     //목표인원
-        uint256 public fee;         //참가비
-        mapping (address => bool) public member;    //멤버인지
-        address[] public members;   //멤버주소
+        address public agent;
+        string public contents;
+        uint256 public deadline;
+        uint256 public goalNum;
+        uint256 public fee;
+        address[] public members;
         
 
         modifier isdeadline() {if(deadline > block.timestamp)_;}
@@ -45,27 +44,25 @@ contract onebyone {
 
         receive() external payable isdeadline {
             require(msg.value == fee && goalNum > members.length);
-            member[msg.sender] = true;
             members.push(msg.sender);
             emit joining(msg.sender);
         }
 }
 
 
-// 데드라인을 날짜에 맞춰서 걸치는 애들을 모음
+
 contract onebymore {
     address public admin;
-    string public time; // 날짜 202204121400 sha256 값
+    string public time;
     mapping(address => CA) public calist;
     uint256 public endTime;
 
     struct CA{
-        string contents;     //모임내용
-        uint256 deadline;    //기한
-        uint256 goalNum;     //목표인원
-        uint256 fee;         //참가비
-        mapping (address => bool) member;    //멤버인지
-        address[] members;   //멤버주소
+        string contents;
+        uint256 deadline;
+        uint256 goalNum;
+        uint256 fee;
+        address[] members;
     }
 
     modifier isAdmin() {if(msg.sender == admin)_;}
@@ -103,7 +100,6 @@ contract onebymore {
         require(nowCA.deadline > block.timestamp);
         require(msg.value == nowCA.fee && nowCA.goalNum > nowCA.members.length);
 
-        nowCA.member[msg.sender] = true;
         nowCA.members.push(msg.sender);
         emit joining(_agent, msg.sender);   
     }
