@@ -35,10 +35,11 @@ contract onebyone {
             number = members.length;
         }
 
-        function remain() public view returns (uint256 min){
+        function remain() public view returns (uint256 min, uint256 num){
             if(block.timestamp < deadline)
             {
                 min = (deadline - block.timestamp) / (1 minutes);
+                num = goalNum - members.length;
             }
         }
 
@@ -84,10 +85,11 @@ contract onebymore {
         tmpca.fee = _fee * 1 ether;
     }
 
-    function remain(address _agent) public view returns (uint256 min){
+    function remain(address _agent) public view returns (uint256 min, uint256 num){
         if(block.timestamp < calist[_agent].deadline)
         {   
             min = (calist[_agent].deadline - block.timestamp) / (1 minutes);
+            num = (calist[_agent].goalNum - calist[_agent].members.length);
         }
     }
 
@@ -105,11 +107,11 @@ contract onebymore {
     }
 
     function getInfo(address _agent) public view returns (string memory _contents, uint256 _deadline, uint256 _goalNum, uint256 _fee, address[] memory _members) {
-            CA storage tmpCA = calist[_agent];
-            _contents = tmpCA.contents;
-            _deadline = tmpCA.deadline;
-            _goalNum = tmpCA.goalNum;
-            _fee = tmpCA.fee;
-            _members = tmpCA.members;
-        }
+        CA storage tmpCA = calist[_agent];
+        _contents = tmpCA.contents;
+        _deadline = tmpCA.deadline;
+        _goalNum = tmpCA.goalNum;
+        _fee = tmpCA.fee;
+        _members = tmpCA.members;
+    }
 }
