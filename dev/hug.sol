@@ -34,7 +34,7 @@ contract hug {
     }
 
     // 컨트랙트에 모임 추가
-    function addHug(string memory _contents, uint256 _goalNum, uint256 _deadline, uint256 _fee) external payable isLock {
+    function addHug(string memory _contents, uint256 _goalNum, uint256 _deadline, uint256 _joinfee) external payable isLock {
         require(msg.value >= 1 ether);      // 기본 요금 충족 필요
 
         HUG storage tmphug = huglist[msg.sender];
@@ -42,7 +42,7 @@ contract hug {
         tmphug.openfee = msg.value;
         tmphug.deadline = block.timestamp + _deadline * 1 minutes;
         tmphug.goalNum = _goalNum;
-        tmphug.joinfee = _fee * 1 ether;
+        tmphug.joinfee = _joinfee * 1 ether;
 
         emit adding(msg.sender, msg.value);
     }
