@@ -3,17 +3,13 @@ App = {
   contracts: {},
   names: new Array(),
   url: 'http://127.0.0.1:8545',
-  chairPerson:null,
-  currentAccount:null,
+
+  // web3 개체를 가진 앱 시작
   init: function() {
     return App.initWeb3();
   },
 
-  init: function() {
-    return App.initWeb3();
-  },
-
-
+  // web3 프로파이더와 스마트 컨트랙트를 설정
   initWeb3: function() {
         // Is there is an injected web3 instance?
     if (typeof web3 !== 'undefined') {
@@ -29,6 +25,7 @@ App = {
     return App.initContract();
   },
 
+  // 컨트랙트 객체 생성
   initContract: function() {
       $.getJSON('HelloWorld.json', function(data) {
     // Get the necessary contract artifact file and instantiate it with truffle-contract
@@ -42,6 +39,7 @@ App = {
   });
   },
 
+  // html의 요소와 컨트랙트 함수를 연결
   printWorld : function(){
     var helloInstance;
     App.contracts.hello.deployed().then(function(instance) {
@@ -61,4 +59,3 @@ $(function() {
     App.init();
   });
 });
-
