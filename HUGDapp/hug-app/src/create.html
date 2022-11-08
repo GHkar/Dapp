@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>Create</title>
+    </head>
+    <body>
+        <header class='form-header'>
+            <h1>Create a HUG <a href= '/index.html'>&#128221;</a></h1>
+        </header>
+
+        <form class='form-row' method="post" action="/hug/create" id = 'form'>
+
+            <table>
+                <tr>
+                    <td><label for='title'>Title&emsp;&emsp;&emsp;</label></td>
+                    <td><input id='title' name='title' type='text'/></td>
+                </tr>
+                <tr>
+                    <td><label for='goal_date'>Goal date&emsp;</label></td>
+                    <td><input type="date" id = "tmp_goal_date"></td>
+                </tr>
+                <tr>
+                    <td><label for='content'>Content&emsp;&nbsp;</label></td>
+                    <td><textarea id='content' placeholder="목표 내용을 입력해주세요." name='content' cols="22" rows="10"></textarea></td>
+                </tr>    
+                <tr>
+                    <td><label for='deadline'>Deadline&emsp;</label></td>
+                    <td><input type="date" id = "tmp_deadline"></td>
+                </tr>
+                <tr>
+                    <td><label for='goal_num'>goal Num&nbsp;</label></td>
+                    <td><input id='goal_num' name='goal_num' type='text'/></td>
+                </tr>
+                <tr>
+                    <td><label for='join_fee'>join Fee&emsp;&nbsp;</label></td>
+                    <td><input id='join_fee' name='join_fee' type='text'/></td>
+                </tr>
+                <tr>
+                    <td><label for='open_fee'>open Fee&nbsp;&nbsp;</label></td>
+                    <td><input id='open_fee' name='open_fee' type='text' value = 1></td>
+                </tr>
+            </table>
+            <input id ='goal_date' name = 'goal_date' type='text'/>
+            <input id ='deadline' name = 'deadline' type='text'/>
+            <input id ='user_id' name = 'user_id' type='text'/>
+            <input id ='ca' name = 'ca' type='text'/>
+            <div>
+                <p>&emsp;</p>
+                <button type="button" id="create" onclick="change();document.getElementById('form').submit();">Create!</button>
+                <button type="button" id="show"">show!</button>
+                <!--<input type="submit" value="Create!" name="" id="submit">-->
+                <!--<a onclick="alert('Created Successfully\n\n The contract address containing your HUG : \n 0x24F492e8c611808DA3e9ee290f6EB6eE032A1E6d');" style="cursor:pointer"><button>Create!</button></a>-->
+            </div>
+
+            <div><p id = "print_test">print</p></div>
+
+            <table>
+                <tr><p>Your hug is registered at the address below.</p></tr>
+                <tr><p id = "contract_account">print</p></tr>
+            </table>
+        </form>
+        <script type = "text/javascript">
+            var tmp = new Date();
+            document.getElementById("tmp_goal_date").value = tmp.toISOString().substring(0, 10);
+            tmp.setDate(tmp.getDate() + 1);
+            document.getElementById("tmp_deadline").value = tmp.toISOString().substring(0, 10);
+
+            document.getElementById("user_id").style.display ='none';
+            document.getElementById("goal_date").style.display ='none';
+            document.getElementById("deadline").style.display ='none';
+            document.getElementById("ca").style.display ='none';
+            var nowid = sessionStorage.getItem('id');
+            document.getElementById('user_id').value = nowid;
+            function change(){
+                document.getElementById('goal_date').value = document.getElementById("tmp_goal_date").value;
+                document.getElementById('deadline').value = document.getElementById("tmp_deadline").value;
+                document.getElementById('ca').value = document.getElementById("contract_account").innerText;
+            }
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/dist/bootstrap.min.js"></script>
+        <script src="js/dist/web3.min.js"></script>
+        <script src="js/dist/truffle-contract.js"></script>
+        <script src="js/app_create.js"></script>
+    </body>
+</html>
+

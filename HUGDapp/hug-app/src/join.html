@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Join</title>
+    </head>
+    <body>
+        <header class='form-header'>
+            <h1>Join <a href= '/index.html'>&#128400;</a></h1>
+        </header>
+
+        <form class='form-row' method="post" action="/process/adduser">
+          <table>
+            <tr>
+              <td><label for='name'>Name</label></td>
+              <td><input id='name' name='name' type='text'></td>
+            </tr>
+            <tr>
+              <td><label for='id'>id</label></td>
+              <td><input id='id' name='id' type='text'></td>
+            </tr>
+
+            <tr>
+              <td><label for='pw'>Password</label></td>
+              <td><input type="password" id='pw' name='pw'></td>
+            </tr>
+
+            <tr>
+              <td><label for='account_addr'>Account address</label></td>
+              <td><input type="text" id='account_addr' name='account_addr' value="Connect to Metamask" readonly></td>
+            </tr>
+            </table>
+            <p>&emsp;</p>
+            <input type="submit" value="Join" name="">
+            <!--<button>Join</button></a>-->
+        </form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/dist/bootstrap.min.js"></script>
+        <script src="js/dist/web3.min.js"></script>
+        <script src="js/app_join.js"></script>
+    </body>
+</html>
+

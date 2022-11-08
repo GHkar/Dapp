@@ -2018,3 +2018,219 @@ miner.start(1)
 miner.stop()
 miner.start(1)
 miner.stop()
+miner.start(1)
+miner.stop()
+eth.account[0]
+eth.accounts[0]
+miner.start
+miner.start()
+miner.stop()
+ls
+eth.accounts
+eth.getBalnace(eth.accounts[0])
+eth.getBalanace(eth.accounts[0])
+eth.getBalance(eth.accounts[0])
+eth.coinbase
+miner.start(1)
+miner.stop(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+eth.pendingTransactions
+miner.start(1)
+miner.stop()
+eth.getBalance("0x96058B5DC1fd2f800178641BC89fe400F91628Ba")
+eth.getBalance(eth.accounts[0])
+eth.pendingTransactions
+miner.start(1)
+miner.stop()
+miner.setEtherbase(eth.accounts[1])
+eth.coinbase
+miner.start(1)
+miner.stop()
+eth.getBlock
+eth.getBlock()
+eth.getblockNumber
+eth.blockNumber
+miner.start(1)
+eth.blockNumber
+miner.stop()
+eth.blockNumber
+miner.start(1)
+eth.blockNumber
+miner.stop()
+miner.setEtherbase(eth.accounts[0])
+eth.pendingTransaction()
+eth.pendingTransaction
+eth.pendingTransactions
+eth.getTransaction("0x9d905d19bd3ecdc9e4dfb2b4350741961550a2423c5a5dca1e027150bfc84ebd")
+eth.pendingTransaction
+eth.pendingTransactions
+miner.start(1)
+eth.getTransaction("0xb5a29467d93ae11a66ab30f4d836420392089f42bc458b3cc72f759562877420")
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+eth.accounts
+miner.start(1)
+miner.stop
+miner.stop()
+eth.coinbase
+miner.start(1)
+miner.stop()
+eth.defaultAccount = eth.coinbase;
+eth.getBalance("0x96058B5DC1fd2f800178641BC89fe400F91628Ba")
+web3.fromWei(eth.getBalance(eth.accounts[0]), "ether")
+0x4d8364A1800d73A5Ce9CC546fA3218869ce50c8f
+eth.accounts
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+eth.getBalance("0x96058B5DC1fd2f800178641BC89fe400F91628Ba")
+eth.getTransaction("0x76e55e493f400211fc0e956858ab4de43884193991b62e74d728b9117e774c70")
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+eth.getBalance(eth.accounts[1])
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+eth.getBalance(eth.accounts[1])
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+stop
+var hugabi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"openfee","type":"uint256"}],"name":"adding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":true,"internalType":"address","name":"member","type":"address"},{"indexed":false,"internalType":"uint256","name":"joinfee","type":"uint256"}],"name":"joining","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address payable","name":"addr","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"refunding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"bool","name":"doit","type":"bool"},{"indexed":false,"internalType":"bool","name":"butgo","type":"bool"},{"indexed":false,"internalType":"address[]","name":"absentlist","type":"address[]"}],"name":"result","type":"event"},{"inputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"}],"name":"addHug","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getBalance","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"getInfo","outputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"_openfee","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"},{"internalType":"address payable[]","name":"_members","type":"address[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"huglist","outputs":[{"internalType":"string","name":"contents","type":"string"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"uint256","name":"openfee","type":"uint256"},{"internalType":"uint256","name":"goalNum","type":"uint256"},{"internalType":"uint256","name":"joinfee","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"join","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"lock","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"key","type":"bool"}],"name":"locking","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"bool","name":"doit","type":"bool"},{"internalType":"bool","name":"butgo","type":"bool"},{"internalType":"address[]","name":"absentlist","type":"address[]"},{"internalType":"uint256","name":"opengas","type":"uint256"},{"internalType":"uint256[]","name":"joingas","type":"uint256[]"}],"name":"refund","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"remain","outputs":[{"internalType":"uint256","name":"min","type":"uint256"},{"internalType":"uint256","name":"num","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"reset","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+hugabi
+var hug = web3.eth.contract(hugabi).at("0xFEeFB0c66830Dba442f177fc4422CEFB2dadb2ee")
+hug
+hug.lock.call()
+hug.locking(false, { from: web3.eth.accounts[0]});
+miner.start(1)
+eth.pendingTransactions
+miner.stop()
+hug.lock.call()
+ls
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+var abi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"judgelist","outputs":[{"internalType":"string","name":"judgeType","type":"string"},{"internalType":"uint256","name":"judgeDate","type":"uint256"},{"internalType":"bool","name":"pass","type":"bool"},{"internalType":"uint256","name":"age","type":"uint256"},{"internalType":"uint256","name":"gender","type":"uint256"},{"internalType":"uint256","name":"salary","type":"uint256"},{"internalType":"uint256","name":"transactionNum","type":"uint256"},{"internalType":"uint256","name":"asset","type":"uint256"},{"internalType":"uint256","name":"creditPoint","type":"uint256"},{"internalType":"uint256","name":"loan","type":"uint256"},{"internalType":"uint256","name":"loanDate","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_number","type":"uint256"}],"name":"show","outputs":[{"internalType":"string","name":"_judgeType","type":"string"},{"internalType":"uint256","name":"_judgeDate","type":"uint256"},{"internalType":"bool","name":"_pass","type":"bool"},{"internalType":"uint256","name":"_age","type":"uint256"},{"internalType":"uint256","name":"_gender","type":"uint256"},{"internalType":"uint256","name":"_salary","type":"uint256"},{"internalType":"uint256","name":"_transactionNum","type":"uint256"},{"internalType":"uint256","name":"_asset","type":"uint256"},{"internalType":"uint256","name":"_loan","type":"uint256"},{"internalType":"uint256","name":"_loanDate","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalNum","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"_judgeType","type":"string"},{"internalType":"uint256","name":"_judgeDate","type":"uint256"},{"internalType":"bool","name":"_pass","type":"bool"},{"internalType":"uint256","name":"_age","type":"uint256"},{"internalType":"uint256","name":"_gender","type":"uint256"},{"internalType":"uint256","name":"_salary","type":"uint256"},{"internalType":"uint256","name":"_transactionNum","type":"uint256"},{"internalType":"uint256","name":"_asset","type":"uint256"},{"internalType":"uint256","name":"_loan","type":"uint256"},{"internalType":"uint256","name":"_loanDate","type":"uint256"}],"name":"write","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+var bytecode = 608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000600281905550610b80806100686000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806304a7ff181461005c5780638b514ed71461007a578063c6f125b1146100b3578063ee572bb7146100cf578063f851a44014610109575b600080fd5b610064610127565b604051610071919061051c565b60405180910390f35b610094600480360381019061008f9190610577565b61012d565b6040516100aa9a99989796959493929190610658565b60405180910390f35b6100cd60048036038101906100c8919061085c565b61023c565b005b6100e960048036038101906100e49190610577565b61034d565b6040516101009b9a99989796959493929190610957565b60405180910390f35b61011161043c565b60405161011e9190610a4a565b60405180910390f35b60025481565b6060600080600080600080600080600080600160008d8152602001908152602001600020905080600001805461016290610a94565b80601f016020809104026020016040519081016040528092919081815260200182805461018e90610a94565b80156101db5780601f106101b0576101008083540402835291602001916101db565b820191906000526020600020905b8154815290600101906020018083116101be57829003601f168201915b50505050509a50806001015499508060020160009054906101000a900460ff16985080600301549750806004015496508060050154955080600601549450806007015493508060090154925080600901549150509193959799509193959799565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1603610341576001600260008282546102a29190610af4565b92505081905550600060016000600254815260200190815260200160002090508a8160000190805190602001906102da929190610460565b50898160010181905550888160020160006101000a81548160ff0219169083151502179055508781600301819055508681600401819055508581600501819055508481600601819055508381600701819055508281600901819055508181600a0181905550505b50505050505050505050565b600160205280600052604060002060009150905080600001805461037090610a94565b80601f016020809104026020016040519081016040528092919081815260200182805461039c90610a94565b80156103e95780601f106103be576101008083540402835291602001916103e9565b820191906000526020600020905b8154815290600101906020018083116103cc57829003601f168201915b5050505050908060010154908060020160009054906101000a900460ff169080600301549080600401549080600501549080600601549080600701549080600801549080600901549080600a015490508b565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b82805461046c90610a94565b90600052602060002090601f01602090048101928261048e57600085556104d5565b82601f106104a757805160ff19168380011785556104d5565b828001600101855582156104d5579182015b828111156104d45782518255916020019190600101906104b9565b5b5090506104e291906104e6565b5090565b5b808211156104ff5760008160009055506001016104e7565b5090565b6000819050919050565b61051681610503565b82525050565b6000602082019050610531600083018461050d565b92915050565b6000604051905090565b600080fd5b600080fd5b61055481610503565b811461055f57600080fd5b50565b6000813590506105718161054b565b92915050565b60006020828403121561058d5761058c610541565b5b600061059b84828501610562565b91505092915050565b600081519050919050565b600082825260208201905092915050565b60005b838110156105de5780820151818401526020810190506105c3565b838111156105ed576000848401525b50505050565b6000601f19601f8301169050919050565b600061060f826105a4565b61061981856105af565b93506106298185602086016105c0565b610632816105f3565b840191505092915050565b60008115159050919050565b6106528161063d565b82525050565b6000610140820190508181036000830152610673818d610604565b9050610682602083018c61050d565b61068f604083018b610649565b61069c606083018a61050d565b6106a9608083018961050d565b6106b660a083018861050d565b6106c360c083018761050d565b6106d060e083018661050d565b6106de61010083018561050d565b6106ec61012083018461050d565b9b9a5050505050505050505050565b600080fd5b600080fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b61073d826105f3565b810181811067ffffffffffffffff8211171561075c5761075b610705565b5b80604052505050565b600061076f610537565b905061077b8282610734565b919050565b600067ffffffffffffffff82111561079b5761079a610705565b5b6107a4826105f3565b9050602081019050919050565b82818337600083830152505050565b60006107d36107ce84610780565b610765565b9050828152602081018484840111156107ef576107ee610700565b5b6107fa8482856107b1565b509392505050565b600082601f830112610817576108166106fb565b5b81356108278482602086016107c0565b91505092915050565b6108398161063d565b811461084457600080fd5b50565b60008135905061085681610830565b92915050565b6000806000806000806000806000806101408b8d0312156108805761087f610541565b5b60008b013567ffffffffffffffff81111561089e5761089d610546565b5b6108aa8d828e01610802565b9a505060206108bb8d828e01610562565b99505060406108cc8d828e01610847565b98505060606108dd8d828e01610562565b97505060806108ee8d828e01610562565b96505060a06108ff8d828e01610562565b95505060c06109108d828e01610562565b94505060e06109218d828e01610562565b9350506101006109338d828e01610562565b9250506101206109458d828e01610562565b9150509295989b9194979a5092959850565b6000610160820190508181036000830152610972818e610604565b9050610981602083018d61050d565b61098e604083018c610649565b61099b606083018b61050d565b6109a8608083018a61050d565b6109b560a083018961050d565b6109c260c083018861050d565b6109cf60e083018761050d565b6109dd61010083018661050d565b6109eb61012083018561050d565b6109f961014083018461050d565b9c9b505050505050505050505050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610a3482610a09565b9050919050565b610a4481610a29565b82525050565b6000602082019050610a5f6000830184610a3b565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b60006002820490506001821680610aac57607f821691505b602082108103610abf57610abe610a65565b5b50919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000610aff82610503565b9150610b0a83610503565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03821115610b3f57610b3e610ac5565b5b82820190509291505056fea26469706673582212200599f1670f4a79920a80b22a727545b178976591143a90231940b6b5c0ec5cec64736f6c634300080d0033
+var abi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"judgelist","outputs":[{"internalType":"string","name":"judgeType","type":"string"},{"internalType":"uint256","name":"judgeDate","type":"uint256"},{"internalType":"bool","name":"pass","type":"bool"},{"internalType":"uint256","name":"age","type":"uint256"},{"internalType":"uint256","name":"gender","type":"uint256"},{"internalType":"uint256","name":"salary","type":"uint256"},{"internalType":"uint256","name":"transactionNum","type":"uint256"},{"internalType":"uint256","name":"asset","type":"uint256"},{"internalType":"uint256","name":"creditPoint","type":"uint256"},{"internalType":"uint256","name":"loan","type":"uint256"},{"internalType":"uint256","name":"loanDate","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_number","type":"uint256"}],"name":"show","outputs":[{"internalType":"string","name":"_judgeType","type":"string"},{"internalType":"uint256","name":"_judgeDate","type":"uint256"},{"internalType":"bool","name":"_pass","type":"bool"},{"internalType":"uint256","name":"_age","type":"uint256"},{"internalType":"uint256","name":"_gender","type":"uint256"},{"internalType":"uint256","name":"_salary","type":"uint256"},{"internalType":"uint256","name":"_transactionNum","type":"uint256"},{"internalType":"uint256","name":"_asset","type":"uint256"},{"internalType":"uint256","name":"_loan","type":"uint256"},{"internalType":"uint256","name":"_loanDate","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalNum","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"_judgeType","type":"string"},{"internalType":"uint256","name":"_judgeDate","type":"uint256"},{"internalType":"bool","name":"_pass","type":"bool"},{"internalType":"uint256","name":"_age","type":"uint256"},{"internalType":"uint256","name":"_gender","type":"uint256"},{"internalType":"uint256","name":"_salary","type":"uint256"},{"internalType":"uint256","name":"_transactionNum","type":"uint256"},{"internalType":"uint256","name":"_asset","type":"uint256"},{"internalType":"uint256","name":"_loan","type":"uint256"},{"internalType":"uint256","name":"_loanDate","type":"uint256"}],"name":"write","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+var bytecode = "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000600281905550610b80806100686000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806304a7ff181461005c5780638b514ed71461007a578063c6f125b1146100b3578063ee572bb7146100cf578063f851a44014610109575b600080fd5b610064610127565b604051610071919061051c565b60405180910390f35b610094600480360381019061008f9190610577565b61012d565b6040516100aa9a99989796959493929190610658565b60405180910390f35b6100cd60048036038101906100c8919061085c565b61023c565b005b6100e960048036038101906100e49190610577565b61034d565b6040516101009b9a99989796959493929190610957565b60405180910390f35b61011161043c565b60405161011e9190610a4a565b60405180910390f35b60025481565b6060600080600080600080600080600080600160008d8152602001908152602001600020905080600001805461016290610a94565b80601f016020809104026020016040519081016040528092919081815260200182805461018e90610a94565b80156101db5780601f106101b0576101008083540402835291602001916101db565b820191906000526020600020905b8154815290600101906020018083116101be57829003601f168201915b50505050509a50806001015499508060020160009054906101000a900460ff16985080600301549750806004015496508060050154955080600601549450806007015493508060090154925080600901549150509193959799509193959799565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1603610341576001600260008282546102a29190610af4565b92505081905550600060016000600254815260200190815260200160002090508a8160000190805190602001906102da929190610460565b50898160010181905550888160020160006101000a81548160ff0219169083151502179055508781600301819055508681600401819055508581600501819055508481600601819055508381600701819055508281600901819055508181600a0181905550505b50505050505050505050565b600160205280600052604060002060009150905080600001805461037090610a94565b80601f016020809104026020016040519081016040528092919081815260200182805461039c90610a94565b80156103e95780601f106103be576101008083540402835291602001916103e9565b820191906000526020600020905b8154815290600101906020018083116103cc57829003601f168201915b5050505050908060010154908060020160009054906101000a900460ff169080600301549080600401549080600501549080600601549080600701549080600801549080600901549080600a015490508b565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b82805461046c90610a94565b90600052602060002090601f01602090048101928261048e57600085556104d5565b82601f106104a757805160ff19168380011785556104d5565b828001600101855582156104d5579182015b828111156104d45782518255916020019190600101906104b9565b5b5090506104e291906104e6565b5090565b5b808211156104ff5760008160009055506001016104e7565b5090565b6000819050919050565b61051681610503565b82525050565b6000602082019050610531600083018461050d565b92915050565b6000604051905090565b600080fd5b600080fd5b61055481610503565b811461055f57600080fd5b50565b6000813590506105718161054b565b92915050565b60006020828403121561058d5761058c610541565b5b600061059b84828501610562565b91505092915050565b600081519050919050565b600082825260208201905092915050565b60005b838110156105de5780820151818401526020810190506105c3565b838111156105ed576000848401525b50505050565b6000601f19601f8301169050919050565b600061060f826105a4565b61061981856105af565b93506106298185602086016105c0565b610632816105f3565b840191505092915050565b60008115159050919050565b6106528161063d565b82525050565b6000610140820190508181036000830152610673818d610604565b9050610682602083018c61050d565b61068f604083018b610649565b61069c606083018a61050d565b6106a9608083018961050d565b6106b660a083018861050d565b6106c360c083018761050d565b6106d060e083018661050d565b6106de61010083018561050d565b6106ec61012083018461050d565b9b9a5050505050505050505050565b600080fd5b600080fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b61073d826105f3565b810181811067ffffffffffffffff8211171561075c5761075b610705565b5b80604052505050565b600061076f610537565b905061077b8282610734565b919050565b600067ffffffffffffffff82111561079b5761079a610705565b5b6107a4826105f3565b9050602081019050919050565b82818337600083830152505050565b60006107d36107ce84610780565b610765565b9050828152602081018484840111156107ef576107ee610700565b5b6107fa8482856107b1565b509392505050565b600082601f830112610817576108166106fb565b5b81356108278482602086016107c0565b91505092915050565b6108398161063d565b811461084457600080fd5b50565b60008135905061085681610830565b92915050565b6000806000806000806000806000806101408b8d0312156108805761087f610541565b5b60008b013567ffffffffffffffff81111561089e5761089d610546565b5b6108aa8d828e01610802565b9a505060206108bb8d828e01610562565b99505060406108cc8d828e01610847565b98505060606108dd8d828e01610562565b97505060806108ee8d828e01610562565b96505060a06108ff8d828e01610562565b95505060c06109108d828e01610562565b94505060e06109218d828e01610562565b9350506101006109338d828e01610562565b9250506101206109458d828e01610562565b9150509295989b9194979a5092959850565b6000610160820190508181036000830152610972818e610604565b9050610981602083018d61050d565b61098e604083018c610649565b61099b606083018b61050d565b6109a8608083018a61050d565b6109b560a083018961050d565b6109c260c083018861050d565b6109cf60e083018761050d565b6109dd61010083018661050d565b6109eb61012083018561050d565b6109f961014083018461050d565b9c9b505050505050505050505050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610a3482610a09565b9050919050565b610a4481610a29565b82525050565b6000602082019050610a5f6000830184610a3b565b92915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b60006002820490506001821680610aac57607f821691505b602082108103610abf57610abe610a65565b5b50919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000610aff82610503565b9150610b0a83610503565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03821115610b3f57610b3e610ac5565b5b82820190509291505056fea26469706673582212200599f1670f4a79920a80b22a727545b178976591143a90231940b6b5c0ec5cec64736f6c634300080d0033"
+var address = ""
+var donsilContract = web3.eth.contract(abi)
+var donsil = donsilContract.new({from, eth.accounts[0], data: bytecode, gas:0x2dc6c0}, function(e, contract) {
+ if (e) {
+     console.log("err creating contract", e);
+ } else {
+     if (!contract.address) {
+         console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
+     } else {
+         console.log("Contract mined! Address: " + contract.address);
+         address = contract.address
+         console.log(contract);
+         console.log(contract.displayMessage());
+     }
+ }
+});
+donsilContract
+var donsil = donsilContract.new({from, eth.accounts[0], data: bytecode, gas:0x2dc6c0}, function(e, contract) {
+ if (e) {
+     console.log("err creating contract", e);
+ } else {
+     if (!contract.address) {
+         console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
+     } else {
+         console.log("Contract mined! Address: " + contract.address);
+         address = contract.address
+         console.log(contract);
+         console.log(contract.displayMessage());
+     }
+ }
+});
+var donsil = donsilContract.new({ from: eth.accounts[0],
+ data: bytecode,
+ gas: 0x2dc6c0
+}, function(e, contract) {
+ if (e) {
+     console.log("err creating contract", e);
+ } else {
+     if (!contract.address) {
+         console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
+     } else {
+         console.log("Contract mined! Address: " + contract.address);
+         address = contract.address
+         console.log(contract);
+         console.log(contract.displayMessage());
+     }
+ }
+});
+var donsil = donsilContract.new({from, eth.accounts[0], data: bytecode, gas:0x2dc6c0}, function(e, contract) {
+ if (e) {
+     console.log("err creating contract", e);
+ } else {
+     if (!contract.address) {
+         console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
+     } else {
+         console.log("Contract mined! Address: " + contract.address);
+         address = contract.address
+         console.log(contract);
+         console.log(contract.displayMessage());
+     }
+ }
+});
+var donsil = donsilContract.new({ from: eth.accounts[0],
+ data: bytecode,
+ gas: 0x2dc6c0
+}, function(e, contract) {
+ if (e) {
+     console.log("err creating contract", e);
+ } else {
+     if (!contract.address) {
+         console.log("Contract transaction send: TransactionHash: " + contract.transactionHash + " waiting to be mined...");
+     } else {
+         console.log("Contract mined! Address: " + contract.address);
+         address = contract.address
+         console.log(contract);
+         console.log(contract.displayMessage());
+     }
+ }
+});
+miner.start(1)
+miner.stop()
+donsil
+donsil.totalNum.call()
+donsil.write("loan", 20, true, 50, 0, 207, 221, 14018, 11917, 95, { from: web3.eth.accounts[0] });
+miner.start(1)
+donsil.totalNum.call()
+miner.stop()
+donsil.show(1, {from : web3.eth.accounts[0]});
+donsil.show(1)
+miner.start(1)
+miner.stop()
+donsil.show(1)
+donsil.show(1, {from: web3.eth.accounts[0]});
+dosil.show.call(1, {from:web3.eth.accounts[0]});
+donsil.show.call(1, {from:web3.eth.accounts[0]});

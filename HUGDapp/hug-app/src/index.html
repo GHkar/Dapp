@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>Main</title>
+    </head>
+    <body>
+        <header class='form-header'>
+            <h1>HUG</h1>
+        </header>
+
+        <form class='form-row'>
+          <table>
+              <tr>
+		<td><input type= "button" value="Login" onclick="check('/login');"/></td>
+		<td><input type= "button" value="Join" onclick="check('/join');"/></td>
+              </tr>
+              <tr>
+		<td><input type= "button" value="Create HUG" onclick="check2('/create')"/></td>
+		<td><input type= "button" value="Search and Join for HUG" onclick="movepage('/search')"/></td>
+              </tr>
+            </table>
+        </form>
+        <table>
+            <tr>
+                <td><p id = user_name >사용자 이름 : </p></td>
+                <td><p id = now_name ></p></td>
+            </tr>
+            <tr>
+                <td><p id = user_id >사용자 아이디 : </p></td>
+                <td><p id = now_id ></p></td>
+            </tr>
+        </table>
+        <button type = "button" id = "logout" onclick="sessionStorage.clear(); location.href = '/process/logout';">로그아웃</button>
+    <script type = "text/javascript">
+		function movepage(page){
+			location.href = page;
+		}
+        var nowname = sessionStorage.getItem('name');
+        var nowid = sessionStorage.getItem('id');
+        document.getElementById('now_name').innerText = nowname;
+        document.getElementById('now_id').innerText = nowid;
+        
+        function check2(page){
+            if (!nowname){
+                alert('로그인 필요');
+                location.href = '/login';
+            }
+            else{
+                movepage(page);
+            }
+        }
+
+        function check(page){
+            if (nowname){
+                alert('로그아웃 필요');
+                location.href = '/';
+            }
+            else{
+                movepage(page);
+            }
+        }
+	</script>
+    </body>
+</html>
+
