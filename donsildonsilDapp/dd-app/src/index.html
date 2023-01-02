@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>Donsil Donsil Write</title>
+    </head>
+    <body>
+        <header class='form-header'>
+            <h1>심사 내용 기록</h1>
+            <h3>돈실돈실 블록체인</h3>
+        </header>
+
+          <table>
+              <tr>
+                  <td><label for='judgeType'>심사 종류</label></td>
+                  <td><input id='judgeType' type='text'/></td>
+              </tr>
+              <tr>
+                  <td><label for='judgeDate'>심사 기간</label></td>
+                  <td><input type="text" id = "judgeDate"></td>
+              </tr>
+              <tr>
+                  <td><label for='pass'>심사 결과</label></td>
+                  <td><input type="text" id = "pass"></td>
+              </tr>    
+              <tr>
+                  <td><label for='age'>나이</label></td>
+                  <td><input type="text" id = "age"></td>
+              </tr>
+              <tr>
+                  <td><label for='gender'>성별</label></td>
+                  <td><input id='gender' type='text'/></td>
+              </tr>
+              <tr>
+                  <td><label for='salary'>월소득</label></td>
+                  <td><input id='salary' type='text'/></td>
+              </tr>
+              <tr>
+                  <td><label for='transactionNum'>금융거래내역</label></td>
+                  <td><input id='transactionNum' type='text'></td>
+              </tr>
+              <tr>
+                <td><label for='asset'>자산</label></td>
+                <td><input id='asset' type='text'></td>
+              </tr>
+              <tr>
+                <td><label for='loan'>대출금액</label></td>
+                <td><input id='loan' type='text'></td>
+              </tr>
+              <tr>
+                <td><label for='loanDate'>대출기간</label></td>
+                <td><input id='loanDate' type='text'></td>
+              </tr>
+            </table>
+            <div>
+                <p>&emsp;</p>
+                <button type="button" id="write">Write!</button>
+            </div>
+            <!--
+            <table>
+                <tr><p>Your hug is registered at the address below.</p></tr>
+                <tr><p id = "contract_account">print</p></tr>
+                <tr><p id = "contract_account2">print</p></tr>
+            </table>-->
+        </form>
+        <script type = "text/javascript">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/dist/bootstrap.min.js"></script>
+        <script src="js/dist/web3.min.js"></script>
+        <script src="js/dist/truffle-contract.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
+

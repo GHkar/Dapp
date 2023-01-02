@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>Search</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <body>
+        <header class='form-header'>
+            <h1>Search and Join for HUG <a href= '/index.html'>&#128269;</a></h1>
+        </header>
+
+        <label id = "label_search" for='search_title'>Title&nbsp;</label>
+        <input id='search_title' name='search_title' type='text'/>
+        <button class = "button" type="button" id="search" onclick="search()">search</button>
+        <button class = "button" type="button" id="all" onclick="all_view()">all</button>
+
+        <br></br>
+        <table class="search">
+            <colgroup>
+                <col width="150">
+                <col width="110">
+                <col width="110">
+                <col width="110">
+                <col width="110">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">title</th>
+                    <th scope="col">id</th>
+                    <th scope="col">deadline</th>
+                    <th scope="col">join fee</th>
+                    <th scope="col">goal num</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a class = "title" href="#">-</a></td>
+                    <td class = "id">-</td>
+                    <td class = "date">-</td>
+                    <td class = "join_fee">-</td>
+                    <td class = "goal_num">-</td>
+                </tr>
+                <tr>
+                    <td><a class = "title" href="#">-</a></td>
+                    <td class = "id">-</td>
+                    <td class = "date">-</td>
+                    <td class = "join_fee">-</td>
+                    <td class = "goal_num">-</td>
+                </tr>
+                <tr>
+                    <td><a class = "title" href="#">-</a></td>
+                    <td class = "id">-</td>
+                    <td class = "date">-</td>
+                    <td class = "join_fee">-</td>
+                    <td class = "goal_num">-</td>
+                <tr>
+                    <td><a class = "title" href="#">-</a></td>
+                    <td class = "id">-</td>
+                    <td class = "date">-</td>
+                    <td class = "join_fee">-</td>
+                    <td class = "goal_num">-</td>
+                </tr>
+                <tr>
+                    <td><a class = "title" href="#">-</a></td>
+                    <td class = "id">-</td>
+                    <td class = "date">-</td>
+                    <td class = "join_fee">-</td>
+                    <td class = "goal_num">-</td>
+            </tbody>
+        </table>
+
+        <!--허그리스트 받아오기 위한 변수-->
+        <input type="hidden" id="huglist" value="<%=JSON.stringify(huglist)%>" />
+        <br></br>
+        <div class = "page">
+            <button class = "button" type="button" id="left" onclick="count('minus')"><<</button>
+            <label id = "pageNum">1</label>
+            <button class = "button" type="button" id="right" onclick="count('plus')">>></button>
+        </div>
+
+
+        <script type = "text/javascript">
+            var all_huglist = JSON.parse(document.getElementById("huglist").value);   
+            const resultElement = document.getElementById('pageNum');
+            // 현재 화면에 표시된 값
+            var number = resultElement.innerText;
+
+            // admin / user
+            var auth = sessionStorage.getItem('auth');
+            if (auth == 0)
+            {
+                document.getElementById('admin').style = "display:none";
+            }
+
+            var huglist = all_huglist;
+            function show(){
+                for(var i = 0; i < 5; i++){
+                    if(i+((number-1) * 5) < huglist.length){
+                        // 제목 처리
+                        var change_title = huglist[i+((number-1) * 5)].contents.split(";");
+                        document.querySelectorAll(".title")[i].innerText = change_title[0];
+                        // 제목에 링크 걸기 (아이디와 번호를 제공하여 detail 페이지에 보여줄 hug 검색)
+                        document.querySelectorAll(".title")[i].href = "javascript:detail('" + huglist[i+((number-1) * 5)].id + "');";
+                        // 아이디 처리
+                        var change_id = huglist[i+((number-1) * 5)].id.split(";");
+                        document.querySelectorAll(".id")[i].innerText = change_id[0];
+                        // 날짜 처리
+                        var change_date = new Date(huglist[i+((number-1) * 5)].deadline);
+                        document.querySelectorAll(".date")[i].innerText = change_date.toLocaleString().substr(0, 12);
+                        // 가입 요금 처리
+                        document.querySelectorAll(".join_fee")[i].innerText = huglist[i+((number-1) * 5)].join_fee;
+                        // 가입 인원 처리
+                        var now_number = huglist[i+((number-1) * 5)].member.length + " / " + huglist[i+((number-1) * 5)].goal_num;
+                        document.querySelectorAll(".goal_num")[i].innerText = now_number;
+                    }
+                    else{
+                        document.querySelectorAll(".title")[i].innerText = "-";
+                        document.querySelectorAll(".id")[i].innerText = "-";
+                        document.querySelectorAll(".date")[i].innerText = "-";
+                        document.querySelectorAll(".join_fee")[i].innerText = "-";
+                        document.querySelectorAll(".goal_num")[i].innerText = "-";
+                        document.querySelectorAll(".title")[i].removeAttribute('href');
+                    }
+                }
+            }
+            show();
+            // 페이지 넘기기
+            function count(type)  {
+                // 더하기 빼기
+                if(type === 'plus') {
+                    if(5 + ((number-1) * 5) < huglist.length){
+                        number = parseInt(number) + 1;
+                    }
+                }else if(type === 'minus')  {
+                    if (number > 1){
+                        number = parseInt(number) - 1;
+                    }
+                }
+                // 결과 출력
+                resultElement.innerText = number;
+                show();
+            }
+
+            function all_view(){
+                huglist = all_huglist;
+                number = 1
+                document.getElementById("search_title").value = "";
+                resultElement.innerText = number;
+                show();
+            }
+
+            // 검색
+            function search(){
+                var what = document.getElementById("search_title").value;
+                var search_huglist = new Array();
+                // 입력이 있으면 수행
+                if (what != ""){
+                    for(var i = 0; i < all_huglist.length; i++){
+                        var tmp_title = all_huglist[i].contents.split(";");
+                        if (tmp_title[0].includes(what)) {
+                            search_huglist.push(all_huglist[i]);
+                        }
+                    }
+                }
+                huglist = search_huglist;
+                show();
+            }
+
+            // detail 페이지 호출
+            function detail(id){
+                var form = document.createElement('form'); // 폼객체 생성
+                var objs;
+                objs = document.createElement('input'); // 값이 들어있는 녀석의 형식
+                objs.setAttribute('type', 'hidden'); // 값이 들어있는 녀석의 type
+                objs.setAttribute('name', 'id'); // 객체이름
+                objs.setAttribute('value', id); //객체값
+                form.appendChild(objs);
+                form.setAttribute('method', 'post'); //get,post 가능
+                form.setAttribute('action', "/detail"); //보내는 url
+                document.body.appendChild(form);
+                form.submit();
+            }
+
+
+        </script>
+    </body>
+</html>
+        

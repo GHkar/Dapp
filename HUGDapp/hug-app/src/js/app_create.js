@@ -50,6 +50,16 @@ App = {
   bindEvents: function() {
     $(document).on('click', '#create', App.addHug);
     $(document).on('click', '#show', App.showHug);
+    $(document).ready(function() {
+      $('#content').on('keyup', function() {
+          $('#cnt').html("("+$(this).val().length+" / 200)");
+
+          if($(this).val().length > 200) {
+              $(this).val($(this).val().substring(0, 200));
+              $('#cnt').html("(200 / 200)");
+          }
+      });
+  });
   },
 
   // HUG 생성
@@ -69,15 +79,21 @@ App = {
     var hash_contents = SHA256(contents);
 
     var deadline_min = parseInt((deadline.getTime() - new Date().getTime()) / (1000 * 60));
-    console.log(deadline_min);
+    
     App.contracts.hug.deployed().then(function(instance) {
       hugInstance = instance;
       
       //현재 사이트에서 선택된 계정
       var fromUser = window.web3.currentProvider.selectedAddress.toString();
-      // 해당 계정을 from으로 지정해주고 함수 실행
-      hugInstance.addHug(hash_contents, hug_num, goalNum, deadline_min, joinFee,{from: fromUser, value: web3.toWei(openFee,"ether")});
       sessionStorage.setItem('num', hug_num);
+
+      // 해당 계정을 from으로 지정해주고 함수 실행
+      return hugInstance.addHug(hash_contents, hug_num, goalNum, deadline_min, joinFee,{from: fromUser, value: web3.toWei(openFee,"ether")});
+    }).then(function(res){
+      // 사용된 가스
+      $('#gas').val(res.receipt.cumulativeGasUsed);
+      // 성공적으로 채굴까지 되면 데이터베이스에 반영
+      $('#form').submit();
     }).catch(function(err){
       console.log(err.message);
     })
@@ -99,8 +115,7 @@ App = {
     }).catch(function(err){
       console.log(err.message);
     })
-  },
-
+  }
 
 };
 

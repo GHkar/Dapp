@@ -3,6 +3,7 @@
     <head>
         <meta charset='UTF-8'/>
         <title>Main</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
         <header class='form-header'>
@@ -12,12 +13,12 @@
         <form class='form-row'>
           <table>
               <tr>
-		<td><input type= "button" value="Login" onclick="check('/login');"/></td>
-		<td><input type= "button" value="Join" onclick="check('/join');"/></td>
+		<td><input class = "button" type= "button" value="Login" onclick="check('/login');"/></td>
+		<td><input class = "button" type= "button" value="Join" onclick="check('/join');"/></td>
               </tr>
               <tr>
-		<td><input type= "button" value="Create HUG" onclick="check2('/create')"/></td>
-		<td><input type= "button" value="Search and Join for HUG" onclick="movepage('/search')"/></td>
+		<td><input class = "button" type= "button" value="Create HUG" onclick="check2('/create')"/></td>
+		<td><input class = "button" type= "button" value="Search and Join for HUG" onclick="movepage('/search')"/></td>
               </tr>
             </table>
         </form>
@@ -31,7 +32,7 @@
                 <td><p id = now_id ></p></td>
             </tr>
         </table>
-        <button type = "button" id = "logout" onclick="sessionStorage.clear(); location.href = '/process/logout';">로그아웃</button>
+        <button class = "button" type = "button" id = "logout" onclick="sessionStorage.clear(); location.href = '/process/logout';">로그아웃</button>
     <script type = "text/javascript">
 		function movepage(page){
 			location.href = page;

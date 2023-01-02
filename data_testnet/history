@@ -2234,3 +2234,164 @@ donsil.show(1)
 donsil.show(1, {from: web3.eth.accounts[0]});
 dosil.show.call(1, {from:web3.eth.accounts[0]});
 donsil.show.call(1, {from:web3.eth.accounts[0]});
+eth.accounts[0]
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+miner.start(1)
+miner.stop()
+var ddabi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"judgelist","outputs":[{"internalType":"string","name":"judgeType","type":"string"},{"internalType":"uint256","name":"judgeDate","type":"uint256"},{"internalType":"bool","name":"pass","type":"bool"},{"internalType":"uint256","name":"age","type":"uint256"},{"internalType":"uint256","name":"gender","type":"uint256"},{"internalType":"uint256","name":"salary","type":"uint256"},{"internalType":"uint256","name":"transactionNum","type":"uint256"},{"internalType":"uint256","name":"asset","type":"uint256"},{"internalType":"uint256","name":"creditPoint","type":"uint256"},{"internalType":"uint256","name":"loan","type":"uint256"},{"internalType":"uint256","name":"loanDate","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_number","type":"uint256"}],"name":"show","outputs":[{"internalType":"string","name":"_judgeType","type":"string"},{"internalType":"uint256","name":"_judgeDate","type":"uint256"},{"internalType":"bool","name":"_pass","type":"bool"},{"internalType":"uint256","name":"_age","type":"uint256"},{"internalType":"uint256","name":"_gender","type":"uint256"},{"internalType":"uint256","name":"_salary","type":"uint256"},{"internalType":"uint256","name":"_transactionNum","type":"uint256"},{"internalType":"uint256","name":"_asset","type":"uint256"},{"internalType":"uint256","name":"_loan","type":"uint256"},{"internalType":"uint256","name":"_loanDate","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalNum","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"_judgeType","type":"string"},{"internalType":"uint256","name":"_judgeDate","type":"uint256"},{"internalType":"bool","name":"_pass","type":"bool"},{"internalType":"uint256","name":"_age","type":"uint256"},{"internalType":"uint256","name":"_gender","type":"uint256"},{"internalType":"uint256","name":"_salary","type":"uint256"},{"internalType":"uint256","name":"_transactionNum","type":"uint256"},{"internalType":"uint256","name":"_asset","type":"uint256"},{"internalType":"uint256","name":"_loan","type":"uint256"},{"internalType":"uint256","name":"_loanDate","type":"uint256"}],"name":"write","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+var donsildonsil = web3.eth.contract(ddabi).at("0x02798Af99F587B193DaeF0f867cC2728Ebcbd856")
+donsildonsil.totalNum.call()
+clear
+celan
+clena
+clean
+donsildonsil.totalNum.call()
+donsildonsil.show.call(1, {from:web3.eth.accounts[0]});
+donsildonsil.totalNum.call()
+miner.start(1)
+donsildonsil.totalNum.call()
+donsildonsil.show.call(1, {from:web3.eth.accounts[0]});
+donsildonsil.totalNum.call()
+donsildonsil.show.call(1, {from:web3.eth.accounts[0]});
+donsildonsil.totalNum.call()
+donsildonsil.show.call(2, {from:web3.eth.accounts[0]});
+donsildonsil.show.call(3, {from:web3.eth.accounts[0]});
+donsildonsil.totalNum.call()
+donsildonsil.show.call(3, {from:web3.eth.accounts[0]});
+donsildonsil.totalNum.call()
+donsildonsil.show.call(3, {from:web3.eth.accounts[0]});
+donsildonsil.totalNum.call()
+donsildonsil.show.call(4, {from:web3.eth.accounts[0]});
+miner.start
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+eth.getBalance(eth.coinbase)
+web3.eth.fromWei(eth.getBalance(eth.coinbase))
+web3.fromWei(eth.getBalance(eth.coinbase))
+web3.fromWei(eth.getBalance(eth.coinbase), 'ether')
+mining.start(1)
+miner.start(1)
+miner.stop()
+minert.start(1)
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+hugabi
+var hugabi =
+[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"openfee","type":"uint256"}],"name":"adding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":true,"internalType":"address","name":"member","type":"address"},{"indexed":false,"internalType":"uint256","name":"joinfee","type":"uint256"}],"name":"joining","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address payable","name":"addr","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"refunding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"bool","name":"doit","type":"bool"},{"indexed":false,"internalType":"bool","name":"butgo","type":"bool"},{"indexed":false,"internalType":"address[]","name":"absentlist","type":"address[]"}],"name":"result","type":"event"},{"inputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"}],"name":"addHug","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getBalance","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"getInfo","outputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"_openfee","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"},{"internalType":"address payable[]","name":"_members","type":"address[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"huglist","outputs":[{"internalType":"string","name":"contents","type":"string"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"uint256","name":"openfee","type":"uint256"},{"internalType":"uint256","name":"goalNum","type":"uint256"},{"internalType":"uint256","name":"joinfee","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"join","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"lock","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"key","type":"bool"}],"name":"locking","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"bool","name":"doit","type":"bool"},{"internalType":"bool","name":"butgo","type":"bool"},{"internalType":"address[]","name":"absentlist","type":"address[]"},{"internalType":"uint256","name":"opengas","type":"uint256"},{"internalType":"uint256[]","name":"joingas","type":"uint256[]"}],"name":"refund","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"remain","outputs":[{"internalType":"uint256","name":"min","type":"uint256"},{"internalType":"uint256","name":"num","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"reset","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+hug abi
+hugabi
+var hugabi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"openfee","type":"uint256"}],"name":"adding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":true,"internalType":"address","name":"member","type":"address"},{"indexed":false,"internalType":"uint256","name":"joinfee","type":"uint256"}],"name":"joining","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address payable","name":"addr","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"refunding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"bool","name":"doit","type":"bool"},{"indexed":false,"internalType":"bool","name":"butgo","type":"bool"},{"indexed":false,"internalType":"address[]","name":"absentlist","type":"address[]"}],"name":"result","type":"event"},{"inputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"}],"name":"addHug","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getBalance","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"getInfo","outputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"_openfee","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"},{"internalType":"address payable[]","name":"_members","type":"address[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"huglist","outputs":[{"internalType":"string","name":"contents","type":"string"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"uint256","name":"openfee","type":"uint256"},{"internalType":"uint256","name":"goalNum","type":"uint256"},{"internalType":"uint256","name":"joinfee","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"join","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"lock","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"key","type":"bool"}],"name":"locking","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"bool","name":"doit","type":"bool"},{"internalType":"bool","name":"butgo","type":"bool"},{"internalType":"address[]","name":"absentlist","type":"address[]"},{"internalType":"uint256","name":"opengas","type":"uint256"},{"internalType":"uint256[]","name":"joingas","type":"uint256[]"}],"name":"refund","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"remain","outputs":[{"internalType":"uint256","name":"min","type":"uint256"},{"internalType":"uint256","name":"num","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"reset","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+var hug = web3.eth.contract(hugabi).at("0xFEeFB0c66830Dba442f177fc4422CEFB2dadb2ee")
+hug.lock.call()
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 10);
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 12);
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 13);
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 14);
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 15);
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 12);
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 11);
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 13);
+miner.start(1)
+miner.stop()
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 13);
+miner.start(1)
+miner.stop()
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 13);
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+var hugabi =
+[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"openfee","type":"uint256"}],"name":"adding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":true,"internalType":"address","name":"member","type":"address"},{"indexed":false,"internalType":"uint256","name":"joinfee","type":"uint256"}],"name":"joining","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address payable","name":"addr","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"refunding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"bool","name":"doit","type":"bool"},{"indexed":false,"internalType":"bool","name":"butgo","type":"bool"},{"indexed":false,"internalType":"address[]","name":"absentlist","type":"address[]"}],"name":"result","type":"event"},{"inputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"}],"name":"addHug","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getBalance","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"getInfo","outputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"_openfee","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"},{"internalType":"address payable[]","name":"_members","type":"address[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"huglist","outputs":[{"internalType":"string","name":"contents","type":"string"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"uint256","name":"openfee","type":"uint256"},{"internalType":"uint256","name":"goalNum","type":"uint256"},{"internalType":"uint256","name":"joinfee","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"join","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"lock","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"key","type":"bool"}],"name":"locking","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"bool","name":"doit","type":"bool"},{"internalType":"bool","name":"butgo","type":"bool"},{"internalType":"address[]","name":"absentlist","type":"address[]"},{"internalType":"uint256","name":"opengas","type":"uint256"},{"internalType":"uint256[]","name":"joingas","type":"uint256[]"}],"name":"refund","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"remain","outputs":[{"internalType":"uint256","name":"min","type":"uint256"},{"internalType":"uint256","name":"num","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"reset","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+var hug = web3.eth.contract(hugabi).at("0xFEeFB0c66830Dba442f177fc4422CEFB2dadb2ee")
+hugabi
+var hugabi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"openfee","type":"uint256"}],"name":"adding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":true,"internalType":"address","name":"member","type":"address"},{"indexed":false,"internalType":"uint256","name":"joinfee","type":"uint256"}],"name":"joining","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address payable","name":"addr","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"refunding","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"agent","type":"address"},{"indexed":false,"internalType":"uint256","name":"number","type":"uint256"},{"indexed":false,"internalType":"bool","name":"doit","type":"bool"},{"indexed":false,"internalType":"bool","name":"butgo","type":"bool"},{"indexed":false,"internalType":"address[]","name":"absentlist","type":"address[]"}],"name":"result","type":"event"},{"inputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"}],"name":"addHug","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getBalance","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"getInfo","outputs":[{"internalType":"string","name":"_contents","type":"string"},{"internalType":"uint256","name":"_openfee","type":"uint256"},{"internalType":"uint256","name":"_deadline","type":"uint256"},{"internalType":"uint256","name":"_goalNum","type":"uint256"},{"internalType":"uint256","name":"_joinfee","type":"uint256"},{"internalType":"address payable[]","name":"_members","type":"address[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"name":"huglist","outputs":[{"internalType":"string","name":"contents","type":"string"},{"internalType":"uint256","name":"deadline","type":"uint256"},{"internalType":"uint256","name":"openfee","type":"uint256"},{"internalType":"uint256","name":"goalNum","type":"uint256"},{"internalType":"uint256","name":"joinfee","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"join","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"lock","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"key","type":"bool"}],"name":"locking","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"},{"internalType":"bool","name":"doit","type":"bool"},{"internalType":"bool","name":"butgo","type":"bool"},{"internalType":"address[]","name":"absentlist","type":"address[]"},{"internalType":"uint256","name":"opengas","type":"uint256"},{"internalType":"uint256[]","name":"joingas","type":"uint256[]"}],"name":"refund","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"remain","outputs":[{"internalType":"uint256","name":"min","type":"uint256"},{"internalType":"uint256","name":"num","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address payable","name":"_agent","type":"address"},{"internalType":"uint256","name":"number","type":"uint256"}],"name":"reset","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+var hug = web3.eth.contract(hugabi).at("0xFEeFB0c66830Dba442f177fc4422CEFB2dadb2ee")
+hug.lock.call()
+hug.getInfo(0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f, 20).call()
+hug.getInfo("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 20, {from:web3.eth.accounts[0]});
+hug.getInfo("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 20);
+miner.start(1)
+miner.stop()
+hug.getInfo("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 20).call();
+hug.getInfo("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 20);
+hug.getInfo(eth.accounts[0], 20);
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 20, {from:web3.eth.accounts[0]});
+hug.refund.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 20, true, false,[], 769659, [70680], {from:web3.eth.accounts[0]});
+hug.refund("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 20, true, false,[], 769659, [70680], {from:web3.eth.accounts[0]});
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()
+hug.getInfo.call("0x4d8364a1800d73a5ce9cc546fa3218869ce50c8f", 14, {from:web3.eth.accounts[0]});
+miner.start(1)
+miner.stop()
+miner.start(1)
+miner.stop()

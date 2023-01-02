@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <title>Detail</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <body>
+        <header class='form-header'>
+            <h1>Detail HUG <a href= '/index.html'>&#128214;</a></h1>
+        </header>
+
+        <table cellspacing="10">
+            <tr>
+                <td><label for='title'>Title</label></td>
+                <td><lable id='title'><%=hug[0].contents%></lable></td>
+            </tr>
+            <tr>
+                <td><label for='content'>Content</label></td>
+                <td><lable id='content'>-</lable></td>
+            </tr>
+            <tr>
+                <td><label for='deadline'>Deadline</label></td>
+                <td><lable id='deadline'><%=hug[0].deadline%></lable></td>
+            </tr>    
+            <tr>
+                <td><label for='goal_num'>goal Num</label></td>
+                <td><label id='goal_num'><%=hug[0].member.length%>/<%=hug[0].goal_num%></lable></td>
+            </tr>
+            <tr>
+                <td><label for='join_fee'>join Fee</label></td>
+                <td><label id='join_fee'><%=hug[0].join_fee%></lable></td>
+            </tr>
+            <tr>
+                <td><label for='open_fee'>open Fee</label></td>
+                <td><label id='open_fee'><%=hug[0].open_fee%></lable></td>
+            </tr>
+            <tr>
+                <td><label for='id'>id</label></td>
+                <td><label id='id'><%=hug[0].id%></lable></td>
+            </tr>
+            <tr>
+                <td><label for='contract_address'>contract address</label></td>
+                <td><label id='contract_address'><%=contract[0].address%></lable></td>
+            </tr>
+            <tr>
+                <td><label for='account'>account</label></td>
+                <td><label id='account'><%=user[0].contract_account%></lable></td>
+            </tr>
+        </table>
+        <br></br>
+
+        <input type="hidden" id="hug" value="<%=JSON.stringify(hug)%>" />
+        
+
+        <table>
+        <tr>
+            <td><label for='balance'>your current holdings</label></td>
+        </tr>
+        <tr>
+            <td><label id='balance'>-</lable></td>
+        </tr>
+        </table>
+        <br></br>
+
+        <form class='form-row' method="post" action="/hug/join" id = 'form' style="display:none">
+            <input id='user_id' name='user_id' type='text'>
+            <p id = 'tmp_hug_id'><%=hug[0].id%></p>
+            <input id='hug_id' name='hug_id' type='text'>
+            <input id='gas' name='gas' type='text'>
+        </form>
+
+        <form class='form-row' method="post" action="/hug/refund" id = 'form2' style="display:none">
+            <input id='perform_refund' type='text'>
+        </form>
+        
+        <div class="detail">
+            <button class = "button" type="button" id="join">Join!</button>
+            <button class = "button" type="button" id="refund">Refund!</button>
+        </div>
+
+        <script type = "text/javascript">
+            var hug = JSON.parse(document.getElementById("hug").value);
+            var auth = sessionStorage.getItem('auth');
+
+
+            // 타이틀 + 내용 변경
+            var change_tc = document.getElementById("title").innerText.split(";");
+            // 타이틀 변경
+            document.getElementById("title").innerText = change_tc[0];
+            // 내용 변경
+            document.getElementById("content").innerText = "모임 날짜 : " + change_tc[1] +"\n" + "모임 내용 : "+ change_tc[2];
+            // 날짜 변경
+            var change_date = new Date(document.getElementById("deadline").innerText);
+            document.getElementById("deadline").innerText = change_date.toLocaleString().substr(0, 12);
+            // 아이디 변경
+            var change_id = document.getElementById("id").innerText.split(";");
+            document.getElementById("id").innerText = change_id[0] + " (" + change_id[1] + ")";
+
+
+            // hug id 입력
+            document.getElementById("hug_id").value = document.getElementById("tmp_hug_id").innerText;
+
+            // join 버튼 활성화 비활성화
+            var not_join = false
+
+            // 인원 수
+            var goal_num = document.getElementById("goal_num").innerText.split("/");
+            if (parseInt(goal_num[0]) == parseInt(goal_num[1])){
+                document.getElementById('goal_num').style = "color:#fa6e75"
+                not_join = true
+            }
+            else{
+                document.getElementById('goal_num').style = "color:#778899"
+            }
+
+            // 마감기한
+            if (change_date.getTime() < new Date().getTime()){
+                document.getElementById('deadline').style = "color:#fa6e75"
+                not_join = true
+            }
+            else{
+                document.getElementById('deadline').style = "color:#778899"
+            }
+
+            // 잔돈
+            var balance = parseInt(document.getElementById('balance').innerText);
+            var joinfee = parseInt(document.getElementById("join_fee").innerText);
+            if (balance < joinfee){
+                document.getElementById('join_fee').style = "color:#fa6e75"
+                not_join = true
+            }
+            else{
+                document.getElementById('join_fee').style = "color:#778899"
+            }
+
+            // 로그인이 안되어 있으면
+            var id = sessionStorage.getItem('id');
+            if (!id){
+                not_join = true
+            }
+
+            document.getElementById('join').disabled = not_join;
+
+
+
+
+            // 권한에 맞춰 refund 버튼 활성/비활성화            
+            if (auth!=1)
+            {
+                document.getElementById("refund").style = "display:none";
+            }
+            else{
+                if (change_date.getTime() > new Date().getTime() || hug[0].refund){
+                    document.getElementById('refund').disabled = true;
+                }
+            }
+
+            
+
+            
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/dist/bootstrap.min.js"></script>
+        <script src="js/dist/web3.min.js"></script>
+        <script src="js/dist/truffle-contract.js"></script>
+        <script src="js/app_detail.js"></script>
+    </body>
+</html>
+        

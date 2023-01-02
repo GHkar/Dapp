@@ -21,6 +21,7 @@ var mongoose = require('mongoose');
 
 // crypto 모듈 불러들이기
 var crypto = require('crypto');
+const { read } = require('fs');
 
 
 //=====================  데이터베이스  =====================//
@@ -158,7 +159,10 @@ function createHugSchema(){
             goal_num: {type: Number, 'default': 0},
             join_fee: {type: Number, 'default': 0},
             open_fee : {type: Number, 'default': 0},
-            member: {type: Array, 'default' : []}
+            member: {type: Array, 'default' : []},
+            open_gas : {type: Number, 'defalut': 0},
+            join_gas: {type: Array, 'default' : []},
+            refund : {type: Boolean, 'default': false}
         }, {
             versionKey: false   // 버전 키가 자동으로 추가되기 때문에 없애고 싶으면 해당 필드 추가 필요
     });
@@ -167,6 +171,10 @@ function createHugSchema(){
     HugSchema.static('findById', function(id, callback){
        return this.find({id: id}, callback); 
     });
+
+    HugSchema.static('findByObjId', function(_id, callback){
+        return this.find({_id: _id}, callback); 
+     });
   
     HugSchema.static('findAll', function(callback){
         return this.find({ }, callback);
@@ -192,13 +200,17 @@ function createContractSchema(){
     });
   
     // 스키마에 static 메소드 추가
-    HugSchema.static('findById', function(addr, callback){
+    ContractSchema.static('findByAddr', function(addr, callback){
        return this.find({address: addr}, callback); 
     });
   
-    HugSchema.static('findAll', function(callback){
+    ContractSchema.static('findAll', function(callback){
         return this.find({ }, callback);
     });
+
+    ContractSchema.static('findById', function(id, callback){
+        return this.find({HUG: id}, callback); 
+     });
         
     
     console.log('ContractSchema 정의함.')
@@ -207,10 +219,6 @@ function createContractSchema(){
     ContractModel = mongoose.model("contract", ContractSchema);
     console.log('ContractModel 정의함.');
   }
-  
-
-
-
 
 
 //=====================  사용자 로그인 및 회원가입 관리  =====================//
@@ -275,7 +283,7 @@ var addUser = function(database, id, password, name, contract_account, callback)
 
 //=====================  HUG - Create 페이지 처리  =====================//
 
-var addHug = function(database, pcontents, pdeadline, pgoalNum, pjoinFee, popenFee, puserId, callback) {
+var addHug = function(database, pcontents, pdeadline, pgoalNum, pjoinFee, popenFee, puserId, open_gas, callback) {
     console.log('addHug 호출됨');
     
     // id로 검색해서 hug num 받아오기
@@ -307,7 +315,8 @@ var addHug = function(database, pcontents, pdeadline, pgoalNum, pjoinFee, popenF
                 "deadline": pdeadline,
                 "goal_num": pgoalNum,
                 "join_fee": pjoinFee,
-                "open_fee": popenFee
+                "open_fee": popenFee,
+                "open_gas": open_gas
             });
             
             hug.save(function(err){
@@ -327,7 +336,6 @@ var addHug = function(database, pcontents, pdeadline, pgoalNum, pjoinFee, popenF
         }
     });
   }
-
 
 
 //=====================  익스프레스  =====================//
@@ -381,9 +389,42 @@ app.get('/create', function (req, res){
 
 // move to search
 app.get('/search', function (req, res){
-  res.render('search.html');
+    HugModel.findAll(function(err, results){
+        if(err){
+            callback(err, null);
+            return;
+        }
+        res.render('search.html', {huglist : results});
+    })
 });
 
+// move to detail
+app.post('/detail', function(req, res){
+    var id = req.body.id;
+    var userId = id.split(';')[0];
+    // 허그 찾기
+    HugModel.findById(id, function(err, hug_result){
+        if(err){
+            callback(err, null);
+            return;
+        }
+        // 유저 찾기
+        UserModel.findById(userId, function(err, user_result){
+            if(err){
+                callback(err, null);
+                return;
+            }
+            // 컨트랙트 찾기
+            ContractModel.findById(hug_result[0]._id, function(err, contract_result){
+                if(err){
+                    callback(err, null);
+                    return;
+                }
+                res.render('detail.html', {hug : hug_result, user : user_result, contract : contract_result});
+            })
+        })
+    })
+});
 
 //=====================  라우터  =====================//
 
@@ -405,6 +446,7 @@ router.route('/process/login').post(function(req, res){
             if(docs) {
                 console.dir(docs);
                 var username = docs[0].name;
+                var auth = docs[0].auth;
 
                 // 세션 저장
                 req.session.user = {
@@ -412,15 +454,16 @@ router.route('/process/login').post(function(req, res){
                     name: username,
                     authorized: true
                 };
-
+                
                 res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
                 res.write('<h1>로그인 성공</h1>');
                 res.write('<div><p>사용자 아이디 :</p></div><div><p id = now_id>' +paramId+ '</p></div>');
                 res.write('<div><p>사용자 이름 : </p></div><div><p id = now_name>' +username+ '</p></div>');
                 res.write("<br><br><a href= '/index.html'>메인으로 돌아가기</a>");
                 res.write("<script>sessionStorage.setItem('num',"+ docs[0].hug_num +");</script>");
-                res.write("<script>var id = document.getElementById('now_id').innerText;console.log(id);sessionStorage.setItem('id', id);</script>");
-                res.write("<script>var name = document.getElementById('now_name').innerText;console.log(id);sessionStorage.setItem('name', name);</script>");
+                res.write("<script>sessionStorage.setItem('id','"+ paramId +"');</script>");
+                res.write("<script>sessionStorage.setItem('name','"+ username +"');</script>");
+                res.write("<script>sessionStorage.setItem('auth',"+ auth +");</script>");
                 res.end();
                 
             } else {
@@ -511,6 +554,7 @@ router.route('/hug/create').post(function(req, res){
     var popenFee = req.body.open_fee || req.query.open_fee;
     var puserId = req.body.user_id || req.query.user_id;
     var ca = req.body.ca || req.query.ca;
+    var open_gas = req.body.gas || req.query.gas;
 
     
 
@@ -518,7 +562,7 @@ router.route('/hug/create').post(function(req, res){
     
     // 데이터베이스 객체가 초기화된 경우, addHug 함수 호출하여 추가
     if (database){
-        addHug(database, pcontents, new Date(pdeadline), pgoalNum, pjoinFee, popenFee, puserId, function(err, result){
+        addHug(database, pcontents, new Date(pdeadline), pgoalNum, pjoinFee, popenFee, puserId, open_gas, function(err, result){
             if(err){throw err;}
             // 결과 객체 확인하여 추가된 데이터 있으면 성공 응답 전송
             if(result){
@@ -553,6 +597,84 @@ router.route('/hug/create').post(function(req, res){
     }
 });
 
+// HUG - join 데이터베이스에 추가 및 처리
+router.route('/hug/join').post(function(req, res){
+    console.log('/hug/join 호출됨.');
+    var user_id = req.body.user_id || req.query.user_id;
+    var hug_id = req.body.hug_id || req.query.hug_id;
+    var gas = req.body.gas || req.query.gas;
+
+    console.log(gas);
+
+    // 데이터 베이스에 추가하기
+    if (database){
+        HugModel.updateOne(
+            {id : hug_id},
+            {$push : {member: user_id, join_gas : gas}}, function(err){
+                if (err) {
+                                
+                    // 결과 객체가 없으면 실패 응답 전송
+                    res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+                    res.write("<script>alert('실패 했습니다.');location.href='/search';</script>");
+                    res.end();
+                }
+                else {
+                    
+                    res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+                    res.write("<script>alert('성공 했습니다.');location.href='/search';</script>");
+                    res.end();
+                } 
+            }
+        );
+    }
+    else {
+        // 데이터베이스 객체가 초기화되지 않은 경우 실패 응답 전송
+        res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+        res.write('<h2>데이터베이스 연결 실패</h2>');
+        res.end();
+    }
+});
+
+
+// HUG - refund 데이터베이스에 처리
+router.route('/hug/refund').post(function(req, res){
+    console.log('/hug/refund 호출됨.');
+    var perform_refund = req.body.perform_refund || req.query.perform_refund;
+
+    console.log(perform_refund);
+
+    // 데이터 베이스에 값 변경하기
+    if (database){
+        HugModel.updateOne(
+            {id : hug_id},
+            {refund: perform_refund}, function(err){
+                if (err) {
+                    console.log('refund 반영 실패');
+                                
+                    // 결과 객체가 없으면 실패 응답 전송
+                    res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+                    res.write("<script>location.href='/search';</script>");
+                    res.end();
+                }
+                else {
+                    console.log('refund 반영 성공');
+                    
+                    res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+                    res.write("<script>location.href='/search';</script>");
+                    res.end();
+                } 
+            }
+        );
+    }
+    else {
+        // 데이터베이스 객체가 초기화되지 않은 경우 실패 응답 전송
+        res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
+        res.write('<h2>데이터베이스 연결 실패</h2>');
+        res.end();
+    }
+});
+
+
 // 라우터 객체를 app 객체에 등록
 app.use('/', router);
 
@@ -568,7 +690,5 @@ http.createServer(app).listen(app.get('port'), function(){
   connectDB();
 
 });
-
-
 
 
