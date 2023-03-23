@@ -7,14 +7,14 @@
             비나 리마머시 저/정우현 역 | 2021년 07월 26일 출간 | 제이펍 | ISBN 1191600122   
             
 * ubuntu 브랜치는 트러플과 프라이빗 이더리움 네트워크 폴더로 구성
-  - Ballot Dapp : 블록체인 인 액션의 예제
+  - **Ballot Dapp** : 블록체인 인 액션의 예제
     <img src="ballot.png"></img>
-  - HUGDapp : 연구 개발한 디앱으로 이벤트 진행을 도움
+  - **HUGDapp** : 연구 개발한 디앱으로 이벤트 진행을 도움
     <img src="hug.png"></img>
-  - data_testnet : 프라이빗 이더리움 네트워크
-  - donsildonsilDapp : 돈실돈실팀의 대구은행 공모전 디앱으로 간단한 금융 심사 정보를 저장할 수 있음
+  - **data_testnet** : 프라이빗 이더리움 네트워크
+  - **donsildonsilDapp** : 돈실돈실팀의 대구은행 공모전 디앱으로 간단한 금융 심사 정보를 저장할 수 있음
     <img src="donsildonsil.png"></img>
-  - test : helloworld 디앱 (테스트 및 베이직)
+  - **test** : helloworld 디앱 (테스트 및 베이직)
 
 ## How to Install
 1. 우분투 환경에서 이더리움 노드 설치 필요 (노드 설치를 통한 프라이빗/테스트 네트워크 구현 필요)
